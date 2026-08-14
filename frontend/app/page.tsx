@@ -35,7 +35,7 @@ export default function Home() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/participants",
+        "https://qr-event-checkin-api-1air.onrender.com/api/participants",
         {
           method: "POST",
           headers: {

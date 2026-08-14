@@ -45,7 +45,7 @@ const [qrLoading, setQrLoading] = useState(false);
 
   try {
     const response = await fetch(
-      `http://127.0.0.1:8000/api/participants/${participant.id}/qr`
+      `https://qr-event-checkin-api-1air.onrender.com/api/participants/${participant.id}/qr`
     );
 
     const data = await response.json();
@@ -72,8 +72,8 @@ const [qrLoading, setQrLoading] = useState(false);
       setError("");
 
       const [dashboardResponse, attendanceResponse] = await Promise.all([
-        fetch("http://127.0.0.1:8000/api/dashboard"),
-        fetch("http://127.0.0.1:8000/api/attendance"),
+        fetch("https://qr-event-checkin-api-1air.onrender.com/api/dashboard"),
+        fetch("https://qr-event-checkin-api-1air.onrender.com/api/attendance"),
       ]);
 
       if (!dashboardResponse.ok || !attendanceResponse.ok) {
@@ -118,7 +118,7 @@ async function handleScan(decodedText: string) {
 
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/api/checkin",
+      "https://qr-event-checkin-api-1air.onrender.com/api/checkin",
       {
         method: "POST",
         headers: {
